@@ -1,0 +1,83 @@
+<mxfile>
+  <diagram name="ER Diagram">
+    <mxGraphModel dx="1060" dy="506" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- Entity Cliente -->
+        <mxCell id="cliente" value="Cliente" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cliente_attrs" value="Código Cliente (NN)\nNombre Cliente" style="text;html=1;" vertex="1" parent="cliente">
+          <mxGeometry x="0" y="0" width="120" height="60" as="geometry" />
+        </mxCell>
+        <!-- Entity Casting -->
+        <mxCell id="casting" value="Casting" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="50" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="casting_attrs" value="Código Casting (CC)\nNombre Casting\nFecha Contratación\nPresupuesto\nCódigo Agente" style="text;html=1;" vertex="1" parent="casting">
+          <mxGeometry x="0" y="0" width="120" height="90" as="geometry" />
+        </mxCell>
+        <!-- Relationship Cliente-Casting -->
+        <mxCell id="cliente_casting_rel" value="Contrata" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="cliente" target="casting">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Entity Fase -->
+        <mxCell id="fase" value="Fase" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fase_attrs" value="Código Casting (CC)\nNúmero Fase (NF)\nFecha Inicio" style="text;html=1;" vertex="1" parent="fase">
+          <mxGeometry x="0" y="0" width="120" height="60" as="geometry" />
+        </mxCell>
+        <!-- Relationship Casting-Fase -->
+        <mxCell id="casting_fase_rel" value="Tiene" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="casting" target="fase">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Entity Prueba Individual -->
+        <mxCell id="prueba" value="Prueba Individual" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="50" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="prueba_attrs" value="Código Casting (CC)\nNúmero Fase (NF)\nNúmero Prueba (NP)\nFecha Realización\nHora Inicio\nHora Fin\nSala" style="text;html=1;" vertex="1" parent="prueba">
+          <mxGeometry x="0" y="0" width="140" height="90" as="geometry" />
+        </mxCell>
+        <!-- Relationship Fase-Prueba -->
+        <mxCell id="fase_prueba_rel" value="Contiene" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="fase" target="prueba">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Entity Perfil -->
+        <mxCell id="perfil" value="Perfil" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="perfil_attrs" value="Código Perfil (CP)\nAtributos" style="text;html=1;" vertex="1" parent="perfil">
+          <mxGeometry x="0" y="0" width="120" height="60" as="geometry" />
+        </mxCell>
+        <!-- Relationship Casting-Perfil -->
+        <mxCell id="casting_perfil_rel" value="Tiene" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="casting" target="perfil">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Entity Candidato -->
+        <mxCell id="candidato" value="Candidato" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="250" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="candidato_attrs" value="Código Candidato (CM)\nNombre\nDirección\nCódigo Perfil" style="text;html=1;" vertex="1" parent="candidato">
+          <mxGeometry x="0" y="0" width="120" height="90" as="geometry" />
+        </mxCell>
+        <!-- Relationship Perfil-Candidato -->
+        <mxCell id="perfil_candidato_rel" value="Posee" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="perfil" target="candidato">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Entity Resultados -->
+        <mxCell id="resultados" value="Resultados" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="resultados_attrs" value="Código Casting (CC)\nNúmero Fase (NF)\nNúmero Prueba (NP)\nCódigo Candidato (CM)\nResultado Prueba (RP)" style="text;html=1;" vertex="1" parent="resultados">
+          <mxGeometry x="0" y="0" width="120" height="60" as="geometry" />
+        </mxCell>
+        <!-- Relationship Prueba-Resultados -->
+        <mxCell id="prueba_resultados_rel" value="Genera" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="prueba" target="resultados">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
