@@ -77,6 +77,13 @@
         <mxCell id="prueba_resultados_rel" value="Genera" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="prueba" target="resultados">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <!-- Tabular Representation -->
+        <mxCell id="tabla1" value="Tabla 1: Relación de Entidades" style="shape=table;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="50" width="200" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="tabla1_content" value="Entidad | Atributos Claves\n---|---\nCliente | Código Cliente (NN)\nCasting | Código Casting (CC)\nFase | Código Casting (CC), Número Fase (NF)\nPrueba Individual | Código Casting (CC), Número Fase (NF), Número Prueba (NP)\nPerfil | Código Perfil (CP)\nCandidato | Código Candidato (CM)\nResultados | Código Casting (CC), Número Fase (NF), Número Prueba (NP), Código Candidato (CM)" style="text;html=1;" vertex="1" parent="tabla1">
+          <mxGeometry x="0" y="0" width="200" height="300" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
